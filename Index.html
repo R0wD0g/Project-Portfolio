@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e2e2e2, #f0f4f8);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            color: #333;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .card {
+            transition: transform 0.2s, box-shadow 0.3s;
+            margin-bottom: 30px; /* Spacing between cards */
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-body {
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for card body */
+            display: flex; /* Flexbox to center content */
+            flex-direction: column; /* Column direction */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            height: 200px; /* Fixed height for cards */
+        }
+        body.dark-mode {
+            background: #343a40; /* Dark background */
+            color: white; /* Light text */
+        }
+        body.dark-mode .hero {
+            color: white; /* White text for hero section */
+        }
+        body.dark-mode .card-body {
+            background-color: #495057; /* Dark card background */
+        }
+        body.dark-mode .card-title, body.dark-mode .card-text {
+            color: white; /* White text for card title and text */
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar a {
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <h1 class="text-white">My Portfolio</h1>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" onsubmit="return handleSearch(event)">
+                    <input type="search" class="form-control form-control-dark" id="searchInput" placeholder="Search..." aria-label="Search">
+                </form>
+                
+                <select class="form-select" id="theme" onchange="toggleTheme()" aria-label="Theme Selector" style="width: 150px;">
+                    <option value="light">Light Mode</option>
+                    <option value="dark">Dark Mode</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Welcome to the Project Portfolio Menu</h1>
+        <p>This is the page for all of my projects.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="projectCards">
+        <div class="col-md-4 project-card">
+            <div class="card">
+                <img src="path/to/your/image1.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Random Number Generator</h5>
+                    <p class="card-text">A simple tool to generate random numbers for your needs.</p>
+                    <a href="Pages/RandomNumberGenerator.html" class="btn btn-custom">Go to Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 project-card">
+            <div class="card">
+                <img src="path/to/your/image2.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">TimerNeeds</h5>
+                    <p class="card-text">Set stopwatches and timers!</p>
+                    <a href="Pages/TimerNeeds.html" class="btn btn-custom">Go to Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 project-card">
+            <div class="card">
+                <img src="path/to/your/image3.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">SmartCalculator</h5>
+                    <p class="card-text">Get all your Calculating needs from this one!</p>
+                    <a href="Pages/SmartCalculator.html" class="btn btn-custom">Go to Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 project-card">
+            <div class="card">
+                <img src="path/to/your/image4.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Word RNG</h5>
+                    <p class="card-text">Really good RNG</p>
+                    <a href="Pages/WordRNG.html" class="btn btn-custom">Go to Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 project-card">
+            <div class="card">
+                <img src="path/to/your/image5.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">ChatyBot</h5>
+                    <p class="card-text">A very responsive bot..</p>
+                    <a href="Pages/ChatyBot.html" class="btn btn-custom">Go to Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    function toggleTheme() {
+        const themeSelect = document.getElementById('theme');
+        if (themeSelect.value === 'dark') {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    }
+
+    function handleSearch(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase(); // Get search term and convert to lowercase
+        const projectCards = document.querySelectorAll('.project-card'); // Get all project card elements
+        projectCards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase(); // Get the title of each card
+            const description = card.querySelector('.card-text').textContent.toLowerCase(); // Get the description of each card
+            
+            // Check if the title or description includes the search term
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                card.style.display = ''; // Show the card if it matches
+            } else {
+                card.style.display = 'none'; // Hide the card if it doesn't match
+            }
+        });
+
+    }
+</script>
+
+</body>
+</html>
